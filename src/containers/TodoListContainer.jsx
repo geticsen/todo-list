@@ -1,11 +1,11 @@
 import TodoList from '../components/TodoList'
 import { connect } from 'react-redux'
-import {deleteTodo,filterTodo} from '../actions'
+import { deleteTodo, filterTodo,initTodoList } from '../actions'
 const mapStateToProps = (state) => {
   return {
     todoList: state.todoList,
-    doneTodoList:state.todoList.filter((todo, index)=>{
-      return todo.status == 'DONE'
+    doneTodoList: state.todoList.filter((todo, index) => {
+      return todo.status
     })
   }
 }
@@ -14,11 +14,14 @@ const mapDispatchToProps = dispatch => {
     deleteTodo: (index) => {
       dispatch(deleteTodo(index))
     },
-    filterTodo:(condition)=>{
+    filterTodo: (condition) => {
       dispatch(filterTodo(condition))
+    },
+    initTodoList: (todoList) => {
+      dispatch(initTodoList(todoList))
     }
   }
 }
-const TodoListContainer = connect(mapStateToProps,mapDispatchToProps)(TodoList);
+const TodoListContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 export default TodoListContainer;
