@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoContainer from '../../containers/TodoContainer'
+import {MOCK_TODOS_API} from '../../url' 
 import axios from "axios"
 class TodoList extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class TodoList extends React.Component {
   componentDidMount(){
     var todoList = [];
     var that = this.props;
-    axios.get("https://5e9ec500fb467500166c4658.mockapi.io/todos")
+    axios.get(MOCK_TODOS_API)
     .then(function(reponse){
       todoList= reponse.data
       that.initTodoList(todoList)

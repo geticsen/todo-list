@@ -1,5 +1,6 @@
 import React from 'react'
 import './todo.css';
+import {MOCK_TODOS_API} from '../../url' 
 import axios from "axios"
 class Todo extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Todo extends React.Component {
   handlerDivClick = () => {
     var id = this.props.todo.id
     var status = !this.state.status
-    axios.put("https://5e9ec500fb467500166c4658.mockapi.io/todos/"+id,{
+    axios.put(MOCK_TODOS_API+"/"+id,{
       id:id,
       status:status
     })
@@ -25,7 +26,7 @@ class Todo extends React.Component {
 
   handlerSpanClick = () => {
     var id = this.props.todo.id
-    axios.delete("https://5e9ec500fb467500166c4658.mockapi.io/todos/"+id)
+    axios.delete(MOCK_TODOS_API+"/"+id)
     .then(function(reponse){
       console.log(reponse)
     })

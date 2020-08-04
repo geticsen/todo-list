@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import {MOCK_TODOS_API} from '../../url' 
 class TodoForm extends React.Component {
   constructor(props) {
     super(props)
@@ -14,14 +15,15 @@ class TodoForm extends React.Component {
 
   onSubmit = () => {
     var text = this.state.text
-    this.props.addTodo(this.state.text);
-    axios.post("https://5e9ec500fb467500166c4658.mockapi.io/todos",{
+    var that =  this.props;
+    axios.post(MOCK_TODOS_API,{
       content:text,
-      status:true
+      status:false
     }).then(function(reponse){
+      that.addTodo(reponse.data);
       console.log(reponse)
     })
-    this.setState({ text: '' });    
+    this.setState({ text: '' });
   }
 
   render() {

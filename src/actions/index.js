@@ -3,10 +3,10 @@ export const CHANGE_STATUS = "CHANGE_STATUS";
 export const DELETE_TODO = "DELETE_TODO"
 export const FILTER_CONDITION = "FILTER_CONDITION"
 export const INIT_TODO_LIST = "INIT_TODO_LIST"
-export function addTodo(text) {
+export function addTodo(todo) {
   return {
     type: ADD_TODO,
-    text
+    todo
   }
 }
 

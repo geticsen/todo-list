@@ -3,7 +3,7 @@ import { ADD_TODO, CHANGE_STATUS,DELETE_TODO ,FILTER_CONDITION,INIT_TODO_LIST} f
 const addTodo = (todoList = [], action) => {
   switch (action.type) {
     case ADD_TODO: {
-      return [...todoList, { text: action.text, status: "UNDONE" }];
+      return [...todoList, action.todo];
     }
     case CHANGE_STATUS: {
       const newTodoList = [...todoList];
