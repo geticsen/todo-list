@@ -1,5 +1,5 @@
 import React from 'react'
-import Todo from '../Todo'
+import TodoContainer from '../../containers/TodoContainer'
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class TodoList extends React.Component {
     return (
       <div>
         {
-          this.props.todoList.map((key, index) => {
-            return <Todo text={key} key={index} />
+          this.props.todoList.map((todo, index) => {
+            return <TodoContainer todo={todo} key={index} index={index} />
           })
         }
       </div>
