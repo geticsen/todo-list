@@ -1,6 +1,6 @@
 import React from 'react'
 import './todo.css';
-
+import axios from "axios"
 class Todo extends React.Component {
   constructor(props) {
     super(props)
@@ -15,6 +15,11 @@ class Todo extends React.Component {
   }
 
   handlerSpanClick = () => {
+    var id = "134"
+    axios.delete("https://5e9ec500fb467500166c4658.mockapi.io/todos/"+id)
+    .then(function(reponse){
+      console.log(reponse)
+    })
     this.props.deleteTodo(this.props.index)
   }
 
