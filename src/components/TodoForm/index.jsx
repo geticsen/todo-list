@@ -21,7 +21,7 @@ class TodoForm extends React.Component {
     return (
       <div>
         <input type="text" onChange={this.handleChange} value={this.state.text} />
-        <input type="submit" onClick={this.onSubmit} />
+        <input type="submit" onClick={this.onSubmit} value="提交"/>
       </div>
     )
   }

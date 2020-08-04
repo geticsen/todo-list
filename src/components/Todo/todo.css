@@ -1,7 +1,10 @@
+div{
+  color:black;
+}
 .UNDONE {
   text-decoration: none;
   width: 200px;
-  border: 1px solid white;
+  border: 1px solid black;
   text-align: left;
 }
 
@@ -9,7 +12,7 @@
   text-decoration: line-through;
   width: 200px;
   text-align: left;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 span {
