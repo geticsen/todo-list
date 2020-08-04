@@ -1,4 +1,4 @@
-import { ADD_TODO, CHANGE_STATUS,DELETE_TODO } from '../actions';
+import { ADD_TODO, CHANGE_STATUS,DELETE_TODO ,FILTER_CONDITION} from '../actions';
 
 const addTodo = (todoList = [], action) => {
   switch (action.type) {
@@ -14,6 +14,15 @@ const addTodo = (todoList = [], action) => {
       const newTodoList =todoList.filter((todo, index)=>{
         return index !== action.index
       })
+      return newTodoList;
+    }
+    case FILTER_CONDITION:{
+      var newTodoList = todoList;
+      if(action.filter){
+        newTodoList = todoList.filter((todo, index)=>{
+          return todo.status == 'DONE'
+        })
+      }
       return newTodoList;
     }
     default: {

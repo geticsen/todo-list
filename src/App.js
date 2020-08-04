@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <Link to="/">首页</Link>
         <Link to="/done">done</Link>
-        <TodoListContainer />
+        <TodoListContainer filter={false}/>
         <TodoFormContainer />
       </header>
     </div>
