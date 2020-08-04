@@ -1,4 +1,4 @@
-import { ADD_TODO, CHANGE_STATUS } from '../actions';
+import { ADD_TODO, CHANGE_STATUS,DELETE_TODO } from '../actions';
 
 const addTodo = (todoList = [], action) => {
   switch (action.type) {
@@ -6,9 +6,15 @@ const addTodo = (todoList = [], action) => {
       return [...todoList, { text: action.text, status: "UNDONE" }];
     }
     case CHANGE_STATUS: {
-      todoList[action.index].status = todoList[action.index].status === 'DONE' ? 'UNDONE' : 'DONE';
-      console.log(todoList[action.index].status)
-      return [...todoList];
+      const newTodoList = [...todoList];
+      newTodoList[action.index].status = newTodoList[action.index].status === 'DONE' ? 'UNDONE' : 'DONE';
+      return newTodoList;
+    }
+    case DELETE_TODO:{
+      const newTodoList =todoList.filter((todo, index)=>{
+        return index !== action.index
+      })
+      return newTodoList;
     }
     default: {
       return todoList;

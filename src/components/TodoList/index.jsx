@@ -11,7 +11,7 @@ class TodoList extends React.Component {
       <div>
         {
           this.props.todoList.map((todo, index) => {
-            return <TodoContainer todo={todo} key={index} index={index} />
+            return <TodoContainer todo={todo} key={index} index={index} deleteTodo={this.props.deleteTodo}/>
           })
         }
       </div>

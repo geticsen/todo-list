@@ -9,14 +9,21 @@ class Todo extends React.Component {
     }
   }
 
-  handlerClick = () => {
+  handlerDivClick = () => {
     this.setState({status: 'DONE' ? 'UNDONE' : 'DONE'});
     this.props.changeStatus(this.props.index);
   }
 
+  handlerSpanClick = () => {
+    this.props.deleteTodo(this.props.index)
+  }
+
   render() {
     return (      
-      <div onClick={this.handlerClick} className={this.props.todo.status}>{this.props.todo.text}</div>
+      <div>
+        <span onClick={this.handlerDivClick} className={this.props.todo.status}>{this.props.todo.text}</span>
+        <span onClick={this.handlerSpanClick} className="x">x</span>
+      </div>
     )
   }
 }

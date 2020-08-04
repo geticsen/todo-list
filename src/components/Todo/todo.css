@@ -1,7 +1,21 @@
 .UNDONE {
-  color: white;
+  text-decoration: none;
+  width: 200px;
+  border: 1px solid white;
+  text-align: left;
 }
 
 .DONE {
-  color: red;
+  text-decoration: line-through;
+  width: 200px;
+  text-align: left;
+  border: 1px solid white;
+}
+
+span {
+  display: inline-block;
+}
+
+.x{
+  display: inline;
 }
