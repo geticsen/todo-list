@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from "axios"
-import {MOCK_TODOS_API} from '../../url' 
+import { MOCK_TODOS_API } from '../../url'
+import { Button, Space,Input } from 'antd'
+import {CheckOutlined} from '@ant-design/icons'
 class TodoForm extends React.Component {
   constructor(props) {
     super(props)
@@ -15,11 +17,11 @@ class TodoForm extends React.Component {
 
   onSubmit = () => {
     var text = this.state.text
-    var that =  this.props;
-    axios.post(MOCK_TODOS_API,{
-      content:text,
-      status:false
-    }).then(function(reponse){
+    var that = this.props;
+    axios.post(MOCK_TODOS_API, {
+      content: text,
+      status: false
+    }).then(function (reponse) {
       that.addTodo(reponse.data);
       console.log(reponse)
     })
@@ -28,9 +30,14 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" onChange={this.handleChange} value={this.state.text} />
-        <input type="submit" onClick={this.onSubmit} value="提交"/>
+      <div className={"todoForm"}>
+        <div>
+          <Space>
+            <Input type="text" className={"inputTodo"} onChange={this.handleChange} placeholder={"写下你想做的事...."} style={{width:700}} value={this.state.text} />
+            <Button type="primary" className={"inputSubmit"} onClick={this.onSubmit}><CheckOutlined  color={"green"}/>提交</Button>
+          </Space>
+
+        </div>
       </div>
     )
   }

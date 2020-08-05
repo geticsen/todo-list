@@ -1,24 +1,30 @@
-div{
+/* div{
   color:black;
-}
+} */
 .UNDONE {
   text-decoration: none;
-  width: 200px;
 }
 
 .DONE {
   text-decoration: line-through;
-  width: 200px;
 }
 
-span {
+/* span {
   text-align: left;
-  width: 200px;
-  border: 1px solid black;
+  width: 90%;
+  border: 1px solid #3399CC;
   display: inline-block;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 .x{
-  
-  display: inline;
+  text-align: center;
+  color: bisque;
+  display: inline-block;
+  width: 3%;
 }
+.x:hover{
+  color: red;
+} */
