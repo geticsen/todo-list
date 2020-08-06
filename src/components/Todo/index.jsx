@@ -2,7 +2,7 @@ import React from 'react'
 import './todo.css';
 import '../../App.css'
 import { CloseCircleOutlined } from "@ant-design/icons"
-import { MOCK_TODOS_API } from '../../url'
+import { TODOS_API } from '../../url'
 import axios from "axios"
 import { Tag, Space, Divider } from "antd"
 
@@ -19,7 +19,7 @@ class Todo extends React.Component {
     var id = this.props.todo.id
     var content = this.props.todo.content
     var status = !this.state.status
-    axios.put(MOCK_TODOS_API + "/" + id, {
+    axios.put(TODOS_API + "/" + id, {
       id: id,
       content:content,
       status: status
@@ -33,7 +33,7 @@ class Todo extends React.Component {
 
   handlerSpanClick = () => {
     var id = this.props.todo.id
-    axios.delete(MOCK_TODOS_API + "/" + id)
+    axios.delete(TODOS_API + "/" + id)
       .then(function (reponse) {
         console.log(reponse)
       })

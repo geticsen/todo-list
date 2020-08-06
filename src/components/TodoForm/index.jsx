@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios"
-import { MOCK_TODOS_API } from '../../url'
+import { TODOS_API } from '../../url'
 import { Button, Space,Input } from 'antd'
 import {CheckOutlined} from '@ant-design/icons'
 class TodoForm extends React.Component {
@@ -18,7 +18,7 @@ class TodoForm extends React.Component {
   onSubmit = () => {
     var text = this.state.text
     var that = this.props;
-    axios.post(MOCK_TODOS_API, {
+    axios.post(TODOS_API, {
       content: text,
       status: false
     }).then(function (reponse) {
