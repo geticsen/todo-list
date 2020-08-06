@@ -17,9 +17,11 @@ class Todo extends React.Component {
 
   handlerDivClick = () => {
     var id = this.props.todo.id
+    var content = this.props.todo.content
     var status = !this.state.status
     axios.put(MOCK_TODOS_API + "/" + id, {
       id: id,
+      content:content,
       status: status
     })
       .then(function (reponse) {
